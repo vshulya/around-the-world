@@ -2,8 +2,8 @@
 Репозиторий для API проекта Mesto с системами авторизации и регистрации пользователей.
 
 Онлайн-приложение для размещения фотографий.\
-Фронтенд [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)\
-Бэкенд [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)
+Фронтенд [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)\
+Бэкенд [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
 
 ## Домены для проекта
 Фронтенд: https://mesto.nomoreparties.sbs \
