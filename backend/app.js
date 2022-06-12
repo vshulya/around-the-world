@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+console.log(process.env.NODE_ENV);
 const express = require('express');
 const mongoose = require('mongoose');
 const { celebrate, Joi } = require('celebrate');
@@ -23,6 +26,13 @@ app.use(cors);
 
 // request logger must be connected before all route handlers
 app.use(requestLogger);
+
+// crash test
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 // routes w/o auth
 app.post(

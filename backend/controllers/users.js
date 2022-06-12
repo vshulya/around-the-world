@@ -2,13 +2,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
 const ValidationError = require('../errors/ValidationError');
 const ServerError = require('../errors/ServerError');
 
 const MONGO_DUPLICATE_KEY_CODE = 11000;
-// const JWT_SECRET_KEY = 1234567890;
 
 const saltRounds = 10;
 
@@ -35,13 +36,6 @@ module.exports.getUser = (req, res, next) => {
       res.status(200).send(user);
     })
     .catch(next);
-  // .catch((err) => {
-  //   if (err.name === 'CastError') {
-  //     next(new NotFoundError('Пользователь с таким id не найден'));
-  //   } else {
-  //     next(new ServerError());
-  //   }
-  // });
 };
 
 // GET /users — return users
@@ -132,7 +126,7 @@ module.exports.login = (req, res) => {
   return User.findUserByCredentials(email, password)
     .then((user) => {
       // создадим токен
-      const token = jwt.sign({ _id: user._id }, 'JWT_SECRET_KEY', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
 
       // вернём токен
       res.send({ token });
