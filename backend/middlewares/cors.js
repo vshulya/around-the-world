@@ -1,8 +1,8 @@
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 const allowedCors = [
-  'https://domain.nomoreparties.site/',
-  'https://api.domain.nomoreparties.site/',
+  'https://mesto.nomoreparties.sbs/',
+  'https://api.mesto.nomoreparties.sbs',
   'localhost:3000',
 ];
 

@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
+const cors = require('./middlewares/cors');
 const { userRouter } = require('./routes/users');
 const { cardRouter } = require('./routes/cards');
 const NotFoundError = require('./errors/NotFoundError');
@@ -18,6 +19,7 @@ const { auth } = require('./middlewares/auth');
 const app = express();
 
 app.use(express.json());
+app.use(cors);
 
 // request logger must be connected before all route handlers
 app.use(requestLogger);
