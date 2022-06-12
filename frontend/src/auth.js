@@ -1,4 +1,4 @@
-export const BASE_URL = 'mesto.nomoreparties.sbs';
+export const BASE_URL = 'https://api.mesto.nomoreparties.sbs';
 
 const checkResponse = (response) => {
   if (response.ok) {
