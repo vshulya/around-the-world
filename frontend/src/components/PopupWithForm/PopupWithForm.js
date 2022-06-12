@@ -2,7 +2,7 @@ import React from 'react';
 function PopupWithForm({ buttonText, name, title, isOpen, onClose, onSubmitForm, children }) {
 
   const defaultButtonTextValue = 'Сохранить';
-  const buttonTextValue = buttonText ?? defaultButtonTextValue;
+  const buttonTextValue = buttonText ?  buttonText : defaultButtonTextValue;
 
   return (
     <section className={`pop-up ${isOpen && "pop-up_opened"}`} >
