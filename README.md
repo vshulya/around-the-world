@@ -6,9 +6,9 @@
 Бэкенд [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)
 
 ## Домены для проекта
-Фронтенд: https://mesto.nomoreparties.sbs\
-Бэкенд: https://api.mesto.nomoreparties.sbs\
-Публичный IP адрес: 51.250.0.211\
+Фронтенд: https://mesto.nomoreparties.sbs \
+Бэкенд: https://api.mesto.nomoreparties.sbs \
+Публичный IP адрес: 51.250.0.211
 
 Вы можете залогинится или использовать для входа:\
 логин: test@test.com\
