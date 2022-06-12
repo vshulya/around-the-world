@@ -13,4 +13,10 @@
   width: 100%;
   height: 19px;
   cursor: pointer;
+  transition: .3s;
+}
+
+.card__delete-button:hover {
+  transition: .3s;
+  opacity: 0.8;
 }

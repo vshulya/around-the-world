@@ -11,3 +11,8 @@
   height: 19px;
   cursor: pointer;
 }
+
+.card__like:hover {
+  transition: .3s;
+  opacity: 0.8;
+}

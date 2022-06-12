@@ -6,13 +6,18 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.createRoot(document.querySelector("#root")).render(<React.StrictMode>
-  <App />
-  {/* <Header />
+ReactDOM.createRoot(document.querySelector("#root")).render(
+  <BrowserRouter>
+    <React.StrictMode>
+      <App />
+      {/* <Header />
   <Main />
   <Footer /> */}
-</React.StrictMode>);
+    </React.StrictMode>
+  </BrowserRouter>
+);
 
 // ReactDOM.render(
 //   <React.StrictMode>
