@@ -99,7 +99,7 @@ class Api {
 const api = new Api({
   baseUrl: 'https://api.mesto.nomoreparties.sbs',
   headers: {
-    authorization: '25c2c7dc-18ba-4ba3-98ff-8581a7c55886',
+    authorization: localStorage.getItem('jwt').token,
     'Content-Type': 'application/json'
   }
 });
