@@ -49,10 +49,10 @@ module.exports.createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password,
   } = req.body;
-  if (!email || !password) {
-    res.status(400).send({ message: 'Не передан email или пароль' });
-    return;
-  }
+  // if (!email || !password) {
+  //   res.status(400).send({ message: 'Не передан email или пароль' });
+  //   return;
+  // }
   bcrypt.hash(password, saltRounds).then((hash) => {
     // Store hash in your password DB.
     User.create({
@@ -119,7 +119,7 @@ module.exports.updateAvatar = (req, res, next) => {
 };
 
 // login
-module.exports.login = (req, res) => {
+module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
 
   return User.findUserByCredentials(email, password)
@@ -135,5 +135,6 @@ module.exports.login = (req, res) => {
       res
         .status(401)
         .send({ message: err.message });
-    });
+    })
+    .catch(next);
 };
