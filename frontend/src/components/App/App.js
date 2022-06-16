@@ -116,10 +116,12 @@ function App() {
   }
 
   function handleCardDelete(card) {
-      console.log("deleting you")
+    const isOwn = card.owner._id === currentUser._id;
+    if (isOwn) {
       api.deleteCard(card._id)
         .then(() => setCards(state => state.filter(c => c !== card)))
         .catch(err => console.log(err))
+    }
   }
 
 
