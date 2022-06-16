@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Route, Routes, useNavigate, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -118,7 +118,7 @@ function App() {
 
     if (isOwn) {
       api.deleteCard(card._id)
-        .then(() => setCards(state => state.filter(c => c._id !== card._id)))
+        .then(() => setCards(state => state.filter(c => c._id != card._id)))
         .catch(err => console.log(err))
     }
   }
