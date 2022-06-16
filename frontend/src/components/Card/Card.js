@@ -27,6 +27,7 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
   }
 
   function handleDeleteClick() {
+    console.log('trying to be deleted')
     onCardDelete(card);
   }
 
