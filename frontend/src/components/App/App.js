@@ -104,12 +104,12 @@ function App() {
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
       .changeLikeCardStatus(card._id, isLiked)
-      .then(newCard => setCards(state => state.map(c => c._id === card._id ? newCard : c)))
+      .then(newCard => setCards(state => state.reverse().map(c => c._id === card._id ? newCard : c)))
       .catch(err => console.log(err))
   }
 
