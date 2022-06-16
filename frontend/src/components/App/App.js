@@ -172,11 +172,32 @@ function App() {
     return api
       .addCard(name, link)
       .then((newCard) => {
-        setCards([newCard, ...cards]).reverse()
+        setCards([newCard, ...cards])
         closeAllPopups();
       })
       .catch(err => console.log(err));
   }
+
+  function handlerEscClose(evt) {
+    if (evt.key === "Escape") {
+      closeAllPopups();
+    }
+  }
+
+  function closeByOverlay(evt) {
+    if (evt.target.classList.contains("popup")) {
+      closeAllPopups();
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", handlerEscClose);
+    document.addEventListener("click", closeByOverlay);
+    return () => {
+      document.removeEventListener("keydown", handlerEscClose);
+      document.removeEventListener("click", closeByOverlay);
+    };
+  });
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
