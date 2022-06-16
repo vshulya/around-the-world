@@ -185,7 +185,7 @@ function App() {
   }
 
   function closeByOverlay(evt) {
-    if (evt.target.classList.contains("popup")) {
+    if (evt.target.classList.contains("Popup")) {
       closeAllPopups();
     }
   }

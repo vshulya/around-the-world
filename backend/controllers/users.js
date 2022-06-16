@@ -7,6 +7,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
 const ValidationError = require('../errors/ValidationError');
 const ServerError = require('../errors/ServerError');
+const UnauthorizedError = require('../errors/UnauthorizedError');
 
 const MONGO_DUPLICATE_KEY_CODE = 11000;
 
@@ -130,11 +131,9 @@ module.exports.login = (req, res, next) => {
       // вернём токен
       res.send({ token });
     })
-    .catch((err) => {
+    .catch(() => {
       // ошибка аутентификации
-      res
-        .status(401)
-        .send({ message: err.message });
+      next(new UnauthorizedError('Неверный логин или пароль'));
     })
     .catch(next);
 };
