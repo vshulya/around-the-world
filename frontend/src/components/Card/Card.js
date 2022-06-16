@@ -5,11 +5,13 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
 
   const currentUser = useContext(CurrentUserContext);
   // Определяем, являемся ли мы владельцем текущей карточки
+  console.log('card.owner', card.owner)
+  console.log('currentUser._id', currentUser._id)
   const isOwn = card.owner === currentUser._id;
 
   // Создаём переменную, которую после зададим в `className` для кнопки удаления
   const cardDeleteButtonClassName = (
-    `card__delete-button ${isOwn ? 'card__delete-button_visible' : 'card__delete-button_hidden'}`
+    `card__delete-button ${isOwn ? '' : 'card__delete-button_hidden'}`
   );
 
   // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
