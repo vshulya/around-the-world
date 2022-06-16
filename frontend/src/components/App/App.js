@@ -109,7 +109,7 @@ function App() {
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
       .changeLikeCardStatus(card._id, isLiked)
-      .then(newCard => setCards(state => state.reverse().map(c => c._id === card._id ? newCard : c)))
+      .then(newCard => setCards(state => state.map(c => c._id === card._id ? newCard : c)))
       .catch(err => console.log(err))
   }
 
@@ -121,17 +121,6 @@ function App() {
         .catch(err => console.log(err))
     }
   }
-
-  // function handleCardDelete(card) {
-  //   const isOwn = card.owner._id === currentUser._id;
-
-  //   if (isOwn) {
-  //     console.log("deleting you")
-  //     api.deleteCard(card._id)
-  //       .then(() => setCards(state => state.filter(c => c._id !== card._id)))
-  //       .catch(err => console.log(err))
-  //   }
-  // }
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -183,7 +172,7 @@ function App() {
     return api
       .addCard(name, link)
       .then((newCard) => {
-        setCards([newCard, ...cards])
+        setCards([newCard, ...cards]).reverse()
         closeAllPopups();
       })
       .catch(err => console.log(err));
