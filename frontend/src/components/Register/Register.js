@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import AuthPopup from '../AuthPopup/AuthPopup';
 
 const Register = ({ isOpen, onClose, handleRegister }) => {
