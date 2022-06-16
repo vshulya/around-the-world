@@ -114,7 +114,7 @@ function App() {
   }
 
   function handleCardDelete(card) {
-    const isOwn = card.owner._id === currentUser._id;
+    const isOwn = card.owner === currentUser._id;
     if (isOwn) {
       api.deleteCard(card._id)
         .then(() => setCards(state => state.filter(c => c._id !== card._id)))
