@@ -104,7 +104,7 @@ function App() {
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
@@ -114,15 +114,23 @@ function App() {
   }
 
   function handleCardDelete(card) {
-    const isOwn = card.owner._id === currentUser._id;
-
-    if (isOwn) {
       console.log("deleting you")
       api.deleteCard(card._id)
-        .then(() => setCards(state => state.filter(c => c._id !== card._id)))
+        .then(() => setCards(state => state.filter(c => c !== card)))
         .catch(err => console.log(err))
-    }
   }
+
+
+  // function handleCardDelete(card) {
+  //   const isOwn = card.owner._id === currentUser._id;
+
+  //   if (isOwn) {
+  //     console.log("deleting you")
+  //     api.deleteCard(card._id)
+  //       .then(() => setCards(state => state.filter(c => c._id !== card._id)))
+  //       .catch(err => console.log(err))
+  //   }
+  // }
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
