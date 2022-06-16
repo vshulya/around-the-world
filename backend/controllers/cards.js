@@ -88,7 +88,7 @@ module.exports.dislikeCard = (req, res, next) => {
       if (!like) {
         throw new NotFoundError('Переданный id не найден');
       }
-      res.send({ data: like });
+      res.send(like);
     })
     // eslint-disable-next-line consistent-return
     .catch((err) => {
