@@ -41,10 +41,9 @@
 @import url(./blocks/card/__likes-number/__likes-number.css);
 @import url(./blocks/card/__delete-button/card__delete-button.css);
 @import url(./blocks/card/__delete-button/_hidden/card__delete-button_hidden.css);
-@import url(./blocks/card/__delete-button/_visible/card__delete-button_visible.css);
 @import url(./blocks/card/__text/card__text.css);
 @import url(./blocks/card/__like/_active/card__like_active.css);
-@import url(./blocks/card/__like/_nonactive/card__like_nonactive.css);
+/* @import url(./blocks/card/__like/_nonactive/card__like_nonactive.css); */
 
 @import url(./blocks/pop-up/pop-up.css);
 @import url(./blocks/pop-up/__close/pop-up__close.css);
