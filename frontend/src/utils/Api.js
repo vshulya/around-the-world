@@ -57,13 +57,13 @@ class Api {
       .then(this._checkResponse)
   };
 
-  deleteLike(id) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes `, {
-      method: 'DELETE',
-      headers: this._headers,
-    })
-      .then(this._checkResponse)
-  };
+  // deleteLike(id) {
+  //   return fetch(`${this._baseUrl}/cards/${id}/likes `, {
+  //     method: 'DELETE',
+  //     headers: this._headers,
+  //   })
+  //     .then(this._checkResponse)
+  // };
 
   changeLikeCardStatus(id, isLiked) {
     return fetch(`${this._baseUrl}/cards/${id}/likes `, {
@@ -99,7 +99,7 @@ class Api {
 const api = new Api({
   baseUrl: 'https://api.mesto.nomoreparties.sbs',
   headers: {
-    // authorization: "Bearer " + localStorage.getItem('jwt'),
+    authorization: `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json'
   }
 });

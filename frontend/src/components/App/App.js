@@ -65,6 +65,7 @@ function App() {
     setLoggedIn(true);
     setUserEmail(email);
     navigate("/");
+    return loggedIn
   };
 
   const handleLogin = (email, password) => {
@@ -73,9 +74,9 @@ function App() {
       .then((data) => {
         if (!data.token) {
           return
-        }
-        localStorage.setItem('jwt', data.token);
+        } else {localStorage.setItem('jwt', data.token);
         switchToLoggedIn(email);
+          }
       })
       .catch(() => {
         setIsInfoTooltipOpen(true);
