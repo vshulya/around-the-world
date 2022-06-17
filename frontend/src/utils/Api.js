@@ -73,7 +73,6 @@ class Api {
       .then(this._checkResponse)
   };
 
-
   // addLike(id) {
   //   return fetch(`${this._baseUrl}/cards/${id}/likes `, {
   //     method: 'PUT',
@@ -99,6 +98,7 @@ class Api {
 const api = new Api({
   baseUrl: 'https://api.mesto.nomoreparties.sbs',
   headers: {
+    Accept: 'application/json',
     authorization: `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json'
   }
