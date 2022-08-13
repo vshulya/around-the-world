@@ -8,7 +8,7 @@ class Api {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`Ошибка ${res.status}`);
+    return Promise.reject(`Error ${res.status}`);
   }
 
   getProfile() {
@@ -57,14 +57,6 @@ class Api {
       .then(this._checkResponse)
   };
 
-  // deleteLike(id) {
-  //   return fetch(`${this._baseUrl}/cards/${id}/likes `, {
-  //     method: 'DELETE',
-  //     headers: this._headers(),
-  //   })
-  //     .then(this._checkResponse)
-  // };
-
   changeLikeCardStatus(id, isLiked) {
     return fetch(`${this._baseUrl}/cards/${id}/likes `, {
       method: isLiked ? 'DELETE' : 'PUT',
@@ -72,14 +64,6 @@ class Api {
     })
       .then(this._checkResponse)
   };
-
-  // addLike(id) {
-  //   return fetch(`${this._baseUrl}/cards/${id}/likes `, {
-  //     method: 'PUT',
-  //     headers: this._headers(),
-  //   })
-  //     .then(this._checkResponse)
-  // };
 
   editAvatar(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar `, {
@@ -91,8 +75,6 @@ class Api {
     })
       .then(this._checkResponse)
   };
-
-  // другие методы работы с API
 }
 
 const api = new Api({

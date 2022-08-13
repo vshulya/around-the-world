@@ -33,8 +33,8 @@ const Register = ({ isOpen, onClose, handleRegister }) => {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      title="Регистрация"
-      buttonValue="Зарегистрироваться"
+      title="Welcome!"
+      buttonValue="Sign up"
     >
       <label className="auth__field">
         <input
@@ -53,7 +53,7 @@ const Register = ({ isOpen, onClose, handleRegister }) => {
           value={inputs.password || ''}
           onChange={handleChange}
           id="password-input"
-          placeholder="Пароль"
+          placeholder="Password"
           name="password"
           className="register__input register__input_type_password"
           minLength="2"

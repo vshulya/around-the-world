@@ -1,7 +1,7 @@
 import React from 'react';
 function PopupWithForm({ buttonText, name, title, isOpen, onClose, onSubmitForm, children }) {
 
-  const defaultButtonTextValue = 'Сохранить';
+  const defaultButtonTextValue = 'Save';
   const buttonTextValue = buttonText ? buttonText : defaultButtonTextValue;
 
   return (

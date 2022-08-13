@@ -13,9 +13,9 @@ const AuthPopup = ({ title, children, buttonValue, onSubmit, formName }) => {
         {
           formName === 'register' &&
           <p className="auth__hint">
-            Уже зарегистрированы?{" "}
+            Have an account?{" "}
             <Link className="auth__link link" to="/sign-in">
-              Войти
+              Log in
             </Link>
           </p>
         }

@@ -8,8 +8,8 @@ function InfoTooltip({ isOpen, onClose, isSucceed }) {
     <section className={`pop-up ${isOpen && "pop-up_opened"}`} >
       <figure className="infoTooltip__container">
         <button onClick={onClose} type="button" className="pop-up__close button"></button>
-        <img src={isSucceed ? success : fail} alt={isSucceed ? "Успех" : "Что-то пошло не так"} className="infoTooltip__img" />
-        <p className="infoTooltip__tip">{isSucceed ? "Вы успешно зарегистрировались!" : "Что-то пошло не так! Попробуйте ещё раз."}</p>
+        <img src={isSucceed ? success : fail} alt={isSucceed ? "Success" : "Something went wrong"} className="infoTooltip__img" />
+        <p className="infoTooltip__tip">{isSucceed ? "registration successful!" : "Something went wrong. Try again."}</p>
       </figure>
     </ section>
   )

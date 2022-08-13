@@ -29,8 +29,8 @@ const Login = ({ isOpen, onClose, handleLogin }) => {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      title="Вход"
-      buttonValue="Войти"
+      title="Glad to see you!"
+      buttonValue="Log in"
     >
       <label className="auth__field">
         <input
@@ -49,7 +49,7 @@ const Login = ({ isOpen, onClose, handleLogin }) => {
           value={inputs.password || ''}
           onChange={handleChange}
           id="password-input"
-          placeholder="Пароль"
+          placeholder="Password"
           name="password"
           className="login__input login__input_type_password"
           minLength="2"

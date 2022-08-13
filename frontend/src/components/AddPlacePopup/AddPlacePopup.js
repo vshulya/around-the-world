@@ -11,7 +11,6 @@ function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
     setLink('')
   }, [isOpen])
 
-  // Обработчик изменения инпута обновляет стейт
   function handleNameChange(e) {
     setName(e.target.value);
   }
@@ -21,10 +20,7 @@ function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
   }
 
   function handleSubmit(e) {
-    // Запрещаем браузеру переходить по адресу формы
     e.preventDefault();
-
-    // Передаём значения управляемых компонентов во внешний обработчик
     onAddPlace({
       name,
       link,
@@ -36,16 +32,15 @@ function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmitForm={handleSubmit}
-      // onAddPlace={handleAddPlaceClick}
-      title="Новое место"
+      title="New place"
     >
       <label className="pop-up__field">
-        <input type="text" id="place-input" value={name || ''} onChange={handleNameChange} placeholder="Название" name="name"
+        <input type="text" id="place-input" value={name || ''} onChange={handleNameChange} placeholder="Name" name="name"
           className="pop-up__input pop-up__input_type_place" minLength="2" maxLength="30" required />
         <span id="place-input-error" className="pop-up__input-error"></span>
       </label>
       <label className="pop-up__field">
-        <input type="url" id="link-input" value={link || ''} onChange={handleLinkChange} placeholder="Ссылка на картинку" name="link"
+        <input type="url" id="link-input" value={link || ''} onChange={handleLinkChange} placeholder="Photo url" name="link"
           className="pop-up__input pop-up__input_type_link" required />
         <span id="link-input-error" className="pop-up__input-error"></span>
       </label>

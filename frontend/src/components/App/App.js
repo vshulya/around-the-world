@@ -104,10 +104,8 @@ function App() {
   };
 
   function handleCardLike(card) {
-    // Снова проверяем, есть ли уже лайк на этой карточке
+    // check if there is like on this card
     const isLiked = card.likes.some(i => i === currentUser._id);
-
-    // Отправляем запрос в API и получаем обновлённые данные карточки
     api
       .changeLikeCardStatus(card._id, isLiked)
       .then(newCard => setCards(state => state.map(c => c._id === card._id ? newCard : c)))
@@ -235,7 +233,7 @@ function App() {
                   <>
                     <Header>
                       <Link className="header__link" to="/sign-up">
-                        Регистрация
+                        Sign up
                       </Link>
                     </Header>
                     <Login
@@ -252,7 +250,7 @@ function App() {
                   <>
                     <Header>
                       <Link className="header__link" to="/sign-in">
-                        Вход
+                        Log in
                       </Link>
                     </Header>
                     <Register

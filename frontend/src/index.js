@@ -9,19 +9,9 @@ ReactDOM.createRoot(document.querySelector("#root")).render(
   <BrowserRouter>
     <React.StrictMode>
       <App />
-      {/* <Header />
-  <Main />
-  <Footer /> */}
     </React.StrictMode>
   </BrowserRouter>
 );
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

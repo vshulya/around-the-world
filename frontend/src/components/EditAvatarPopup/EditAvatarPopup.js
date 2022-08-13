@@ -21,9 +21,9 @@ function EditAvatarPopup({ onUpdateAvatar, isOpen, onClose }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmitForm={handleSubmit}
-      title="Обновить аватар">
+      title="Update profile picture">
       <label className="pop-up__field">
-        <input type="url" ref={changeAvatar} placeholder="Ссылка на аватар" name="avatar"
+        <input type="url" ref={changeAvatar} placeholder="Profile picture link" name="avatar"
           className="pop-up__input pop-up__input_type_profile-photo-link" required />
         <span id="avatar-input-error" className="pop-up__input-error"></span>
       </label>
