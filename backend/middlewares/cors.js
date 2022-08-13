@@ -5,7 +5,7 @@ const allowedCors = [
   'https://api.mesto.nomoreparties.sbs',
   'http://mesto.nomoreparties.sbs',
   'http://api.mesto.nomoreparties.sbs',
-  'localhost:3000',
+  'http://localhost:3000',
 ];
 
 // eslint-disable-next-line consistent-return

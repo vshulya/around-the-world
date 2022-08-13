@@ -64,7 +64,7 @@ app.use('/users', auth, userRouter);
 app.use('/cards', auth, cardRouter);
 
 app.use((req, res, next) => {
-  next(new NotFoundError('Такого адреса не существует'));
+  next(new NotFoundError('Page not found '));
 });
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
