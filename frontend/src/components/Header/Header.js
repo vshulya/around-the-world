@@ -20,7 +20,11 @@ function Header(props) {
       {props.loggedIn ? (
         <>
           <div className="header__header">
-            <img src={logo} alt="logo" className="logo" />
+            <div className="logo__wrapper">
+              <p className="logo">Around</p>
+              <p className="logo__text">the World</p>
+            </div>
+            {/* <img src={logo} alt="logo" className="logo" /> */}
             <button className={burgerMenuButtonClassName} onClick={toggleBurgerMenu}></button>
           </div>
           <nav className={burgerMenuClassName}>
@@ -32,6 +36,7 @@ function Header(props) {
         <>
           <div className="header__header">
             <img src={logo} alt="logo" className="logo" />
+            {/* <img src={logo} alt="logo" className="logo" /> */}
             {props.children}
           </div>
         </>

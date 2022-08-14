@@ -53,7 +53,8 @@ function App() {
       .then(() => {
         setIsInfoTooltipOpen(true);
         setIsInfoTooltipSucceed(true);
-        navigate("/sign-in")
+        setTimeout(() => handleLogin(email, password), 1000);
+        setTimeout(() => setIsInfoTooltipOpen(false), 1000);
       })
       .catch(() => {
         setIsInfoTooltipOpen(true);

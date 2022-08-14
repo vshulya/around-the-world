@@ -6,6 +6,7 @@
   line-height: 22px;
   transition: .3s;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .header__link:hover {

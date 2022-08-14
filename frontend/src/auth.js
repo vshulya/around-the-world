@@ -1,10 +1,10 @@
 export const BASE_URL = 'https://api.mesto.nomoreparties.sbs';
 
-const checkResponse = (response) => {
-  if (response.ok) {
-    return response.json();
+const checkResponse = (res) => {
+  if (res.ok) {
+    return res.json()
   }
-  return response.json()
+  return res.json()
     .then((res) => {
       throw res.error
     })

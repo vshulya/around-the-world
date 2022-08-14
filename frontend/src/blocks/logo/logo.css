@@ -1,13 +1,38 @@
-.logo {
+/* .logo {
   width: 142px;
   height: 33px;
-  /* padding-bottom: 41px; */
 }
 
 @media screen and (max-width: 600px) {
   .logo {
     width: 103.74px;
     height: 24.4px;
-    /* padding: 0 0 31px 27px;  */
+  }
+} */
+
+.logo__wrapper {
+  display: flex;
+}
+
+.logo {
+  margin: 0;
+  font-size: 32px;
+  /* line-height: 33px; */
+}
+
+.logo__text {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo__text {
+    font-size: 10px;
   }
 }

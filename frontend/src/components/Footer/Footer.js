@@ -9,7 +9,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p className="footer__copyright">©{date} Mesto Russia</p>
+      <p className="footer__copyright">©{date} Around the World</p>
     </footer>
   );
 }

@@ -9,7 +9,7 @@ function InfoTooltip({ isOpen, onClose, isSucceed }) {
       <figure className="infoTooltip__container">
         <button onClick={onClose} type="button" className="pop-up__close button"></button>
         <img src={isSucceed ? success : fail} alt={isSucceed ? "Success" : "Something went wrong"} className="infoTooltip__img" />
-        <p className="infoTooltip__tip">{isSucceed ? "registration successful!" : "Something went wrong. Try again."}</p>
+        <p className="infoTooltip__tip">{isSucceed ? "Registration successful!" : "Something went wrong. Try again."}</p>
       </figure>
     </ section>
   )
