@@ -19,7 +19,7 @@ module.exports.getMe = (req, res, next) => {
   User.find({ _id })
     .then((user) => {
       if (!user) {
-        next(new NotFoundError('Пользователь не найден'));
+        next(new NotFoundError('User not found'));
       }
       return res.send(...user);
     })
@@ -31,7 +31,7 @@ module.exports.getUser = (req, res, next) => {
   User.findById(req.params.userId)
     .then((user) => {
       if (!user) {
-        next(new NotFoundError('Пользователь не найден'));
+        next(new NotFoundError('User not found'));
       }
       res.status(200).send(user);
     })
@@ -50,16 +50,11 @@ module.exports.createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password,
   } = req.body;
-  // if (!email || !password) {
-  //   res.status(400).send({ message: 'Не передан email или пароль' });
-  //   return;
-  // }
   bcrypt.hash(password, saltRounds).then((hash) => {
     // Store hash in your password DB.
     User.create({
       name, about, avatar, email, password: hash,
     })
-      // вернём записанные в базу данные
       .then((user) => {
         const { _id } = user;
         res.status(201).send({
@@ -70,7 +65,6 @@ module.exports.createUser = (req, res, next) => {
           email,
         });
       })
-      // данные не записались, вернём ошибку
       .catch((err) => {
         if (err.code === MONGO_DUPLICATE_KEY_CODE) {
           next(new ConflictError('Пользователь с таким email уже существует'));
@@ -83,7 +77,7 @@ module.exports.createUser = (req, res, next) => {
 // PATCH /users/me — update profile
 module.exports.updateUser = (req, res, next) => {
   const { name, about } = req.body;
-  // обновим имя найденного по _id пользователя
+  // update user info
   User.findByIdAndUpdate(req.user._id, { name, about }, {
     new: true, runValidators: true,
   })
@@ -92,10 +86,10 @@ module.exports.updateUser = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new ValidationError('Введены некорретные данные'));
+        next(new ValidationError('Incorrect data'));
       }
       if (err.name === 'CastError') {
-        next(new ValidationError('Id пользователя введено некорректно'));
+        next(new ValidationError('Incorrect Id'));
       } else {
         next(new ServerError());
       }
@@ -109,10 +103,10 @@ module.exports.updateAvatar = (req, res, next) => {
     .then((user) => res.status(200).send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new ValidationError('Введены некорретные данные'));
+        next(new ValidationError('Incorrect data'));
       }
       if (err.name === 'CastError') {
-        next(new ValidationError('Id пользователя введено некорректно'));
+        next(new ValidationError('Incorrect Id'));
       } else {
         next(new ServerError());
       }
@@ -133,7 +127,7 @@ module.exports.login = (req, res, next) => {
     })
     .catch(() => {
       // ошибка аутентификации
-      next(new UnauthorizedError('Неверный логин или пароль'));
+      next(new UnauthorizedError('Wrong email or password'));
     })
     .catch(next);
 };

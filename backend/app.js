@@ -30,7 +30,7 @@ app.use(requestLogger);
 // crash test
 app.get('/crash-test', () => {
   setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
+    throw new Error('Server is going to crash');
   }, 0);
 });
 

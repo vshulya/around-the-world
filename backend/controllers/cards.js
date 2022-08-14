@@ -13,19 +13,18 @@ module.exports.getCards = (_, res, next) => {
 
 // POST /cards
 module.exports.createCard = (req, res, next) => {
-  const owner = req.user._id; // _id станет доступен
+  const owner = req.user._id; // grab _id
   const { name, link } = req.body;
 
   Card.create({
     name, link, owner, likes: [],
   })
-    // вернём записанные в базу данные
+    // return data to db
     .then((card) => res.status(201).send(card))
-    // данные не записались, вернём ошибку
     // eslint-disable-next-line consistent-return
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new ValidationError('Некорректные данные при создании карточки'));
+        next(new ValidationError('Incorrect data'));
       } else {
         next(new ServerError());
       }
@@ -38,19 +37,19 @@ module.exports.deleteCard = (req, res, next) => {
   Card.findById(cardId)
     .then((card) => {
       if (!card) {
-        next(new NotFoundError('Карточка  не найдена'));
+        next(new NotFoundError('Card not found'));
       }
       if (req.user._id === card.owner.toString()) {
         return card.remove()
           .then(() => {
-            res.send({ message: 'Карточка удалена' });
+            res.send({ message: 'Card has been deleted' });
           });
       }
-      return next(new ForbiddenError('Нет прав для удаления этой карточки'));
+      return next(new ForbiddenError('No rights for deleting'));
     })
     .catch((err) => {
       if (err.name === 'CastError') {
-        next(new ValidationError('Передан некорректный Id'));
+        next(new ValidationError('Incorrect Id'));
       } else {
         next(new ServerError());
       }
@@ -66,12 +65,12 @@ module.exports.likeCard = (req, res, next) => {
   )
     .then((like) => {
       if (!like) {
-        next(new NotFoundError('Карточки не существует'));
+        next(new NotFoundError('Card not found'));
       } res.send(like);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
-        next(new ValidationError('Передан некорректный Id'));
+        next(new ValidationError('Incorrect Id'));
       }
       next(err);
     });
@@ -86,14 +85,14 @@ module.exports.dislikeCard = (req, res, next) => {
   )
     .then((like) => {
       if (!like) {
-        throw new NotFoundError('Переданный id не найден');
+        throw new NotFoundError('Id not found');
       }
       res.send(like);
     })
     // eslint-disable-next-line consistent-return
     .catch((err) => {
       if (err.name === 'CastError') {
-        return next(new ValidationError('Передан некорректный Id'));
+        return next(new ValidationError('Incorrect Id'));
       }
       next(err);
     });
