@@ -1,26 +1,25 @@
 # react-mesto-api-full
-Репозиторий для API проекта Mesto с системами авторизации и регистрации пользователей.
+The repository of a web application for sharing travel photos with the functionality of user registration and authetication. \
 
-Онлайн-приложение для размещения фотографий.\
-Фронтенд [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)\
-Бэкенд [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
+Frontend [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)\
+Backend [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
 
-## Домены для проекта
-Фронтенд: https://mesto.nomoreparties.sbs \
-Бэкенд: https://api.mesto.nomoreparties.sbs \
-Публичный IP адрес: 51.250.0.211
+## Domains
+Frontend: https://mesto.nomoreparties.sbs \
+Backend: https://api.mesto.nomoreparties.sbs \
+Public IP of the server: 51.250.0.211
 
-Вы можете залогинится или использовать для входа:\
-логин: test@test.com\
-пароль: testtest
+You can create an account or use this account:\
+login: test@test.com\
+password: testtest
 
-## Функциональность 
-Авторизация и регистрация пользователей\
-Смена аватара\
-Редактирование профиля\
-Добавление и удаление фотографий\
-Постановка лайков\
-Просмотр фотографий в полном размере
+## Functionality
+User registration and authetication \
+Profile picture updating \
+Profile updating \
+Uploading and deleting pictures \
+Like and unlike pictures \
+Viewing pictures in the full size
 
-## Использованные технологии
+## Stack
 React JS | Express JS | Node.js | MongoDB | BEM | Adaptive design
