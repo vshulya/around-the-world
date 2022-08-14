@@ -9,7 +9,7 @@ Frontend: https://mesto.nomoreparties.sbs \
 Backend: https://api.mesto.nomoreparties.sbs \
 Public IP of the server: 51.250.0.211
 
-You can create an account or use this account:\
+You can create an account or use this account: \
 login: test@test.com\
 password: testtest
 
@@ -18,8 +18,8 @@ User registration and authetication \
 Profile picture updating \
 Profile updating \
 Uploading and deleting pictures \
-Like and unlike pictures \
-Viewing pictures in the full size
+Liking and unliking pictures \
+Viewing pictures full sized
 
 ## Stack
 React JS | Express JS | Node.js | MongoDB | BEM | Adaptive design
