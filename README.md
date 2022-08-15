@@ -1,5 +1,5 @@
 # react-mesto-api-full
-The repository of a web application for sharing travel photos with the functionality of user registration and authetication. 
+The repository of a web application for sharing travel photos with the functionality of user registration and authentication. 
 
 Frontend [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)\
 Backend [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
