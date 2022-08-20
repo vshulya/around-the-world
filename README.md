@@ -1,7 +1,7 @@
 # react-mesto-api-full
-The repository of a web application for sharing travel photos with the functionality of user registration and authentication. 
+A single-page application instagram-like clone with photo-sharing, like/dislike functionality and full user profiles with profile pictures. Deployed to a VPS. Stack used: Backend in Ubuntu/Nginx/Node.js/Express/MongoDB with a React.js frontend.  
 
-Frontend [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)\
+Frontend [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend) \
 Backend [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
 
 ## Domains
