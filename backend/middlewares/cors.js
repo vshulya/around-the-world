@@ -5,7 +5,10 @@ const allowedCors = [
   'https://api.mesto.nomoreparties.sbs',
   'http://mesto.nomoreparties.sbs',
   'http://api.mesto.nomoreparties.sbs',
+  'http://140.82.42.116/',
+  'http://140.82.42.116/aroundtheworld',
   'http://localhost:3000',
+  'http://localhost:3001',
 ];
 
 // eslint-disable-next-line consistent-return
