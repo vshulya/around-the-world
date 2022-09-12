@@ -1,26 +1,25 @@
 # react-mesto-api-full
-Репозиторий для API проекта Mesto с системами авторизации и регистрации пользователей.
+A single-page application instagram-like clone with photo-sharing, like/dislike functionality and full user profiles with profile pictures. Deployed to a VPS. Stack used: Backend in Ubuntu/Nginx/Node.js/Express/MongoDB with a React.js frontend.  
 
-Онлайн-приложение для размещения фотографий.\
-Фронтенд [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend)\
-Бэкенд [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
+Frontend [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/frontend) \
+Backend [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
 
-## Домены для проекта
-Фронтенд: https://mesto.nomoreparties.sbs \
-Бэкенд: https://api.mesto.nomoreparties.sbs \
-Публичный IP адрес: 51.250.0.211
+## Domains
+Frontend: https://mesto.nomoreparties.sbs \
+Backend: https://api.mesto.nomoreparties.sbs \
+Public IP of the server: 51.250.0.211
 
-Вы можете залогинится или использовать для входа:\
-логин: test@test.com\
-пароль: testtest
+You can create an account or use this account: \
+login: test@test.com\
+password: testtest
 
-## Функциональность 
-Авторизация и регистрация пользователей\
-Смена аватара\
-Редактирование профиля\
-Добавление и удаление фотографий\
-Постановка лайков\
-Просмотр фотографий в полном размере
+## Functionality
+User registration and authetication \
+Profile picture updating \
+Profile updating \
+Uploading and deleting pictures \
+Liking and unliking pictures \
+Viewing pictures full sized
 
-## Использованные технологии
+## Stack
 React JS | Express JS | Node.js | MongoDB | BEM | Adaptive design
