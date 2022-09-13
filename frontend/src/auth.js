@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.mesto.nomoreparties.sbs';
+export const BASE_URL = '/aroundtheworld/api/';
 
 const checkResponse = (res) => {
   if (res.ok) {
