@@ -6,10 +6,6 @@ Frontend [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/fr
 Backend [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
 
 ## Domains
-<<<<<<< HEAD
-
-=======
->>>>>>> 252889c34a5d68999f3b7a6144a7a6687ca72575
 http://140.82.42.116/aroundtheworld/ \
 Public IP of the server: 140.82.42.116
 
