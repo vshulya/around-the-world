@@ -5,9 +5,8 @@ Frontend [React JS](https://github.com/vshulya/react-mesto-api-full/tree/main/fr
 Backend [Express JS](https://github.com/vshulya/react-mesto-api-full/tree/main/backend)
 
 ## Domains
-Frontend: https://mesto.nomoreparties.sbs \
-Backend: https://api.mesto.nomoreparties.sbs \
-Public IP of the server: 51.250.0.211
+http://140.82.42.116/aroundtheworld/ \
+Public IP of the server: 140.82.42.116
 
 You can create an account or use this account: \
 login: test@test.com\
