@@ -78,7 +78,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://api.mesto.nomoreparties.sbs',
+  baseUrl: 'http://140.82.42.116/aroundtheworld/api',
   headers() { 
     return  {
     Accept: 'application/json',

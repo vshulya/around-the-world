@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.querySelector("#root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/aroundtheworld">
     <React.StrictMode>
       <App />
     </React.StrictMode>
