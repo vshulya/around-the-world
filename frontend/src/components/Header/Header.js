@@ -35,7 +35,8 @@ function Header(props) {
       ) : (
         <>
           <div className="header__header">
-            <img src={logo} alt="logo" className="logo" />
+            <p className="logo">Around</p>
+            <p className="logo__text">the World</p>
             {/* <img src={logo} alt="logo" className="logo" /> */}
             {props.children}
           </div>
